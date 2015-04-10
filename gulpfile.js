@@ -17,7 +17,7 @@ gulp.task('html', function() {
 gulp.task('sass', function () {
     gulp.src('builds/development/sass/*.scss')
         .pipe(sass())
-        .pipe(concat('style.css'))
+        .pipe(concat('style.min.css'))
         .pipe(uncss({
             html: ['builds/development/*.html']
         }))
