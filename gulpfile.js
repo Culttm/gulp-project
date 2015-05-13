@@ -18,9 +18,6 @@ gulp.task('sass', function () {
     gulp.src('builds/development/sass/*.scss')
         .pipe(sass())
         .pipe(concat('style.min.css'))
-        .pipe(uncss({
-            html: ['builds/development/*.html']
-        }))
         .pipe(csso())
         .pipe(gulp.dest('builds/development/css/'));
 });
