@@ -1,8 +1,6 @@
 var gulp = require('gulp'),
-  gutil = require('gulp-util'),
   webserver = require('gulp-webserver'),
   sass = require('gulp-sass'),
-  uncss = require('gulp-uncss'),
   concat = require('gulp-concat'),
   csso = require('gulp-csso');
 
@@ -15,7 +13,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('sass', function () {
-    gulp.src('builds/development/sass/*.scss')
+    gulp.src('builds/development/sass/**/*')
         .pipe(sass())
         .pipe(concat('style.min.css'))
         .pipe(csso())
@@ -24,7 +22,7 @@ gulp.task('sass', function () {
 
 gulp.task('watch', function() {
   gulp.watch('builds/development/js/**/*', ['js']);
-  gulp.watch('builds/development/sass/*.scss', ['sass']);
+  gulp.watch('builds/development/sass/**/*', ['sass']);
   gulp.watch(['builds/development/*.html',
     'builds/development/views/*.html'], ['html']);
 });
