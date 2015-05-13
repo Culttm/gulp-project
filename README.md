@@ -1,16 +1,16 @@
-# gulp-project
+# Gulp Project
 
-Этот проект я сделал специально для возможности быстро собирать проект, использую технологии sass, gulp, npm-server и прочее...
+This project I made specifically for the ability to quickly build the project, using technology sass, gulp, npm-server and other ...
 
-После клонирования репозитория необходимо сделать 
+After cloning the repository needs to be done
 ```sh
 $ npm install
 ```
-Потом останется только запустить команду 
+Then just need to run the command
 ```sh
 $ gulp
 ```
-Приятной работы...
+Nice work...
 
 # Gulp Modules
 
@@ -19,3 +19,17 @@ $ gulp
 - gulp-sass
 - gulp-concat
 - gulp-csso
+
+# RUS
+
+Этот проект я сделал специально для возможности быстро собирать проект, использую технологии sass, gulp, npm-server и прочее...
+
+После клонирования репозитория необходимо сделать
+```sh
+$ npm install
+```
+Потом останется только запустить команду 
+```sh
+$ gulp
+```
+Приятной работы...
