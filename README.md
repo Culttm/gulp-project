@@ -11,15 +11,6 @@ $ gulp
 ```
 Nice work...
 
-# Gulp Modules
-
-- gulp
-- gulp-webserver
-- gulp-sass
-- gulp-concat
-- gulp-csso
-
-
 ---
 # Gulp Project (RUS)
 
@@ -34,3 +25,14 @@ $ npm install
 $ gulp
 ```
 Приятной работы...
+
+---
+# What Gulp Modules I Use
+
+- gulp
+- gulp-webserver
+- gulp-sass
+- gulp-concat
+- gulp-csso
+
+
