@@ -1,0 +1,41 @@
+$color-stack:
+  (group: orange, id: normal, color: #e67835),
+  (group: orange, id: pale, color: #f8a878),
+  (group: orange, id: dark, color: #ad490c),
+  (group: blue, id: normal, color: #426682);
+//=== Exsample ===
+// background: color(orange, pale,.4);
+// Color  Function
+$font-stack:
+  (group: brandon, id: light, font: ('Brandon Grot W01 Light', san-serif ), weight: 200, style: normal),
+  (group: brandon, id: light-italic, font: ('Brandon Grot W01 Light', san-serif ), weight: 200, style: italic),
+  (group: brandon, id: regular, font: ('Brandon Grot W01-Regular', san-serif), weight: 400, style: normal),
+  (group: brandon, id: regular-italic, font: ('Brandon Grot W01-Regular', san-serif), weight: 400, style: italic),
+  (group: brandon, id: bold, font: ('Brandon Grot W01 Black', san-serif), weight: 700, style: normal),
+  (group: brandon, id: bold-italic, font: ('Brandon Grot W01-Regular', san-serif), weight: 400, style: italic),
+  (group: clarendon, id: regular, font: ('Clarendon LT W01', serif), weight: 200, style: normal),
+  (group: code, id: regular, font: (monospace), weight: 400, style: normal);
+//=== Exsample ===
+// @include font(brandon, regular-italic);
+// Breakpoint Mixin
+$media-stack:
+  (group: phone, id: general, rule: "only screen and (min-device-width: "+$screen-xs-min+")"),
+  (group: tablet, id: general, rule: "only screen and (min-device-width: "+$screen-sm-min+")"),
+  (group: desktop, id: general, rule: "only screen and (min-device-width: "+$screen-md-min+")"),
+  (group: desktop, id: wide, rule: "only screen and (min-device-width: "+$screen-lg-min+")"),
+  (group: small, id: inbetween, rule: "only screen and (min-device-width: 1100px) and (max-device-width: 1400px)"),
+  (group: print, id: general, rule: "only print"),
+  (group: custom, id: screen, rule: "only screen and");
+//=== Exsample ===
+//  @include media(phone, general){
+//    @content
+//  };
+//  @include media(tablet, general){
+//    @content
+//  };
+//  @include media(desktop, general){
+//    @content
+//  };
+//  @include media(desktop, wide){
+//    @content
+//  };

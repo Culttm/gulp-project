@@ -1,8 +1,9 @@
 var gulp = require('gulp'),
-  webserver = require('gulp-webserver'),
-  sass = require('gulp-sass'),
-  concat = require('gulp-concat'),
-  csso = require('gulp-csso');
+    webserver = require('gulp-webserver'),
+    sass = require('gulp-sass'),
+    concat = require('gulp-concat'),
+    csso = require('gulp-csso'),
+    gulpCopy = require('gulp-copy');
 
 gulp.task('js', function() {
   gulp.src('builds/development/js/**/*')
@@ -24,7 +25,7 @@ gulp.task('watch', function() {
   gulp.watch('builds/development/js/**/*', ['js']);
   gulp.watch('builds/development/sass/**/*', ['sass']);
   gulp.watch(['builds/development/*.html',
-    'builds/development/views/*.html'], ['html']);
+              'builds/development/views/*.html'], ['html']);
 });
 
 gulp.task('webserver', function() {
@@ -35,4 +36,20 @@ gulp.task('webserver', function() {
     }));
 });
 
-gulp.task('default', ['watch', 'html', 'js', 'sass', 'webserver']);
+gulp.task('copyfonts', function() {
+   gulp.src('./node_modules/bootstrap/fonts/**/*.{ttf,woff,woff2,eot,svg}')
+   .pipe(gulp.dest('./builds/development/fonts'));
+});
+
+gulp.task('copyjquery', function() {
+   gulp.src('./node_modules/jquery/dist/jquery.js')
+   .pipe(gulp.dest('./builds/development/js/lib/jquery/'));
+});
+
+gulp.task('copybootstrap', function() {
+   gulp.src('.//node_modules/bootstrap/dist/js/bootstrap.js')
+   .pipe(gulp.dest('./builds/development/js/lib/bootstrap/'));
+});
+
+
+gulp.task('default', ['copyfonts', 'copyjquery', 'copybootstrap', 'watch', 'html', 'js', 'sass', 'webserver']);

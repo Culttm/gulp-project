@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "includes/varibles";
+@import "includes/stack";
+@import "includes/mixins";
 
 body {
-  font-size: 16px;
+  font-size: $font-size-base;
 }
