@@ -37,15 +37,23 @@ gulp.task('watch', function() {
   gulp.watch('builds/development/sass/**/*.scss', ['sass']);
   gulp.watch('builds/development/**/*.html', ['html']);
   gulp.watch('builds/development/img/**/*', ['img']);
+  gulp.watch('builds/development/fonts/**/*', ['fonts']);
 });
 
 gulp.task('libs', function() {
   gulp.src(bc+'jquery/dist/jquery.js')
       .pipe(gulp.dest('./builds/dist/libs/jquery/'));
 
-  gulp.src(bc+'bootstrap/dist/**/*.*')
+  gulp.src(bc+'bootstrap/dist/js/')
       .pipe(gulp.dest('./builds/dist/libs/bootstrap/'));
 
+});
+
+gulp.task('fonts', function() {
+  gulp.src('builds/development/fonts/**/*')
+      .pipe(gulp.dest('./builds/dist/fonts/'));
+  gulp.src(bc+'bootstrap/dist/fonts/')
+      .pipe(gulp.dest('./builds/dist/fonts/'));
 });
 
 gulp.task('webserver', function() {
@@ -58,6 +66,7 @@ gulp.task('webserver', function() {
 
 gulp.task('default', [
   'libs',
+  'fonts',
   'html',
   'img',
   'js',
