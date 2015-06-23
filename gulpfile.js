@@ -11,7 +11,7 @@ var bc = './bower_components/';
 gulp.task('js', function() {
   gulp.src('builds/development/js/**/*.js')
     .pipe(concat('app.js'))
-    .pipe(gulp.dest('builds/dist/app/'))
+    .pipe(gulp.dest('builds/dist/js/'))
 });
 
 gulp.task('html', function() {
@@ -46,6 +46,9 @@ gulp.task('libs', function() {
 
   gulp.src(bc+'bootstrap/dist/js/bootstrap.js')
       .pipe(gulp.dest('./builds/dist/libs/bootstrap/'));
+
+  gulp.src('builds/development/libs/**/*.*')
+      .pipe(gulp.dest('./builds/dist/libs/'));
 
 });
 
