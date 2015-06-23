@@ -3,7 +3,7 @@ This project I made specifically for the ability to quickly build the project, u
 
 After cloning the repository needs to be done
 ```sh
-$ npm install
+$ bower i && npm i
 ```
 Then just need to run the command
 ```sh
