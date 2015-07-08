@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     webserver = require('gulp-webserver'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
-    csso = require('gulp-csso');
+    csso = require('gulp-csso'),
+    plumber = require('gulp-plumber');
     
 var bc = './bower_components/';
 
@@ -21,6 +22,7 @@ gulp.task('html', function() {
 
 gulp.task('sass', function () {
   gulp.src('builds/development/sass/**/*')
+      .pipe(plumber())
       .pipe(sass())
       .pipe(concat('style.min.css'))
       .pipe(csso())
